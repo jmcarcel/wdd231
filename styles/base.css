@@ -57,9 +57,17 @@ header span {
 main {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    margin: 0;
+    padding: 10px;
 }
 .about {
     padding: 0;
+    background-color: #eee;
+    border: #656ee6 solid 1px;
+}
+.about p {
+    font-size: 20px;
+    padding: 10px;
 }
 h1 {
     grid-column: 1/3;
@@ -68,9 +76,15 @@ h1 {
 h2 {
     display: flex;
     justify-content: center;
+    background-color: #7e84e4;
+    border: #656ee6 solid 1px;
+    margin: 5px;
+    padding: 0;
 }
 .certificate {
     grid-column: 1/3;
+    background-color: #eee;
+    border: #656ee6 solid 1px;
 }
 .buttons {
     display: flex;
@@ -81,6 +95,15 @@ h2 {
 }
 .buttons button {
     font-size: 20px;
+}
+.student {
+    background-color: #eee;
+    border: #656ee6 solid 1px;
+}
+.student img {
+    display: flex;
+    justify-self: center;
+    padding: 10px;
 }
 footer {
     background-color: #eee;
@@ -103,4 +126,7 @@ footer {
 }
 .social a:hover {
     background-color: #ddd;
+}
+footer p {
+    font-size: 14px;
 }

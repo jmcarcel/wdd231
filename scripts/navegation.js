@@ -9,6 +9,7 @@ navbutton.addEventListener('click', () => {
     allButton.classList.toggle('open')
     cseButton.classList.toggle('open')
     wddButton.classList.toggle('open')
+    navBar.r
 });
 
 const currentYear = document.querySelector("#currentYear");
