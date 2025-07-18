@@ -101,7 +101,71 @@ const courses = [
 
 createAllCourses(courses)
 
-const allButton = document.querySelector("#all");
-allButton.addEventListener("click", () => {
+const cseCourses = document.querySelector("#cse");
+cseCourses.addEventListener("click", () => {
+    document.querySelector(".course").innerHTML = "";
+    let csecourses = courses.filter(course => {
+        return course.subject == "CSE"
+    });
+    createAllCourses(csecourses);
+});
+
+const wddCourses = document.querySelector("#wdd");
+wddCourses.addEventListener("click", () => {
+    document.querySelector(".course").innerHTML = "";
+    let wddcourses = courses.filter(course => {
+        return course.subject == "WDD"
+    });
+    createAllCourses(wddcourses)
+})
+
+const allCourses = document.querySelector("#all");
+allCourses.addEventListener("click", () => {
+    document.querySelector(".course").innerHTML = "";
     createAllCourses(courses);
 });
+
+function createAllCourses(courses) {
+    const conteiner = document.querySelector(".course");
+    courses.forEach(course => {
+        let card = document.createElement("div")
+        card.classList.add("coursecard");
+
+        if (course.completed == true) {
+            card.innerHTML = `
+                <button
+                    type="button"
+                    title="${course.subject}-${course.number}" 
+                    id="${course.subject}-${course.number}"
+                    style="background-color: #0000FF; color: white; border: none; ">
+                    ✔ ${course.subject} ${course.number}
+                </button>`;
+        } else {
+            card.innerHTML = `
+                <button
+                    type="button"
+                    title="${course.subject}-${course.number}" 
+                    id="${course.subject}-${course.number}"
+                    style="background-color:#666666; color: white; border: none;">
+                    ◯ ${course.subject} ${course.number}
+                </button>`;
+        }
+
+        conteiner.appendChild(card);
+        
+    });
+}
+
+
+        const totalCredits = courses.reduce((total, course) => {
+            return total + course.credits;
+        }, 0);
+
+
+        const obtainedCredits = courses.filter(course => course.completed).
+            reduce((totalObtainedCredits, course) => {
+                return totalObtainedCredits + course.credits;
+            }, 0);
+
+        const allCredits = document.querySelector("#totalCredits");
+        allCredits.innerHTML = `The total credits for course listed above is ${totalCredits} (${obtainedCredits} obtained)`;
