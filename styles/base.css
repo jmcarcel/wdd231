@@ -95,6 +95,11 @@ h2 {
 }
 .buttons button {
     font-size: 20px;
+    background-color: #7e84e4;
+    padding: 0 20px;
+}
+.buttons button:hover {
+    background-color: #ddd;
 }
 .student {
     background-color: #eee;

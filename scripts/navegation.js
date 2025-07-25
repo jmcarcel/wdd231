@@ -6,10 +6,8 @@ const wddButton = document.querySelector('#wdd')
 navbutton.addEventListener('click', () => {
     navbutton.classList.toggle('show');
     navBar.classList.toggle('show');
-    allButton.classList.toggle('open')
     cseButton.classList.toggle('open')
     wddButton.classList.toggle('open')
-    navBar.r
 });
 
 const currentYear = document.querySelector("#currentYear");
@@ -137,7 +135,8 @@ function createAllCourses(courses) {
                     type="button"
                     title="${course.subject}-${course.number}" 
                     id="${course.subject}-${course.number}"
-                    style="background-color: #0000FF; color: white; border: none; ">
+                    style="background-color: #36bad1ff; color: black; border: none; padding: 5px;
+                    margin: 2px">
                     ✔ ${course.subject} ${course.number}
                 </button>`;
         } else {
@@ -146,18 +145,15 @@ function createAllCourses(courses) {
                     type="button"
                     title="${course.subject}-${course.number}" 
                     id="${course.subject}-${course.number}"
-                    style="background-color:#666666; color: white; border: none;">
+                    style="background-color:#ccc; color: black; border: none; padding: 5px;
+                    margin: 2px">
                     ◯ ${course.subject} ${course.number}
                 </button>`;
         }
 
         conteiner.appendChild(card);
         
-    });
-}
-
-
-        const totalCredits = courses.reduce((total, course) => {
+         const totalCredits = courses.reduce((total, course) => {
             return total + course.credits;
         }, 0);
 
@@ -169,3 +165,8 @@ function createAllCourses(courses) {
 
         const allCredits = document.querySelector("#totalCredits");
         allCredits.innerHTML = `The total credits for course listed above is ${totalCredits} (${obtainedCredits} obtained)`;
+    });
+}
+
+
+       
