@@ -1,18 +1,13 @@
-const currentYear = document.querySelector("#currentYear");
-const lastModified = document.querySelector("#lastModified");
-const today = new Date();
-currentYear.innerHTML = `<span>${today.getFullYear()}</span>`;
-lastModified.innerHTML = `<span>${document.lastModified}</span>`;
 
-const companies = '';
+const companies = 'https://github.com/jmcarcel/wdd231/blob/main/chamber/data/members.json';
 
-const cards = document.querySelector('#cards');
+const cards = document.querySelector('#companies');
 
 async function getMembers() {
     const response = await fetch(companies);
     const data = await response.json(); // parse the JSON data
-    // console.table(data.prophets);
-    displayProphets(data.prophets);
+    // console.table(data.members);
+    displayMembers(data.members);
 }
 
-getProphetData();
+getMembers();

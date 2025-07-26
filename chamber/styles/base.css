@@ -1,0 +1,52 @@
+:root {
+    --primary-color: rgb(117, 74, 156);
+    --secondary-color: #c0abce;
+    --background-color: #eee;
+    --text-color: black;
+    --font-family: 'roboto'
+}
+header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    font-size: 20px;
+}
+.nav ul li {
+    text-decoration: none;
+}
+main {
+    display: grid;
+    
+}
+.event {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 20px;
+    background-color: #ccc;
+    border: solid 1px black;
+    padding: 5px;
+}
+footer {
+    background-color: var(--background-color);
+    padding: 1rem 10px;
+    text-align: center;
+}
+.social {
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+}
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: #ccc solid 1px;
+    border-radius: 5px;
+}
+.social a:hover {
+    background-color: #ddd;
+}
+footer p {
+    font-size: 14px;
+}
