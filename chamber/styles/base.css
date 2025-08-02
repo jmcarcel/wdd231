@@ -6,28 +6,80 @@
     --font-family: 'roboto'
 }
 header {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: var(--primary-color);
+    color: #fff;
 }
-.nav ul li {
+span {
+    font-size: 35px;
+    padding: 20px 10px;
+}
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.navigation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+    font-size: 1.5rem;
+}
+.navigation a {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
     text-decoration: none;
+    color: #fff;
 }
-main {
-    display: grid;
-    
+
+.navigation a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.navigation.open a {
+    display: block;
+}
+.hero picture {
+    display: block;
+    line-height: 0;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+section div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1 rem;
+    width: 100%;
 }
 .event {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-column: 1/2;
     font-size: 20px;
     background-color: #ccc;
     border: solid 1px black;
     padding: 5px;
 }
+.weather-card {
+    grid-column: 2/3;
+}
 footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
     background-color: var(--background-color);
-    padding: 1rem 10px;
+    padding: 10px;
     text-align: center;
 }
 .social {
@@ -39,10 +91,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
     border: #ccc solid 1px;
     border-radius: 5px;
+    padding: 10px;
 }
 .social a:hover {
     background-color: #ddd;
