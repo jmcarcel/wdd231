@@ -3,9 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home Page - Joan Carcel</title>
+    <meta name="description" content="WDD231 Home page Assignment first week">
+    <meta name="author" content="Joan Carcel">
+    <meta property="og:title" content="Joan Carcel's home page">
+    <meta property="og:description" content="Personal information, courses in progress, social media contact">
+    <meta property="og:url" content="https://jmcarcel.github.io/wdd231/">
+    <meta property="og:image" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/navegation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
-    
+    <header>
+        <img src="images/house-door-fill.svg" alt="Site Logo" width="200" height="200">
+    <span>Joan's Home page</span>
+    <button id="ham-btn" class="hamburguer"></button>
+    </header>
+    <nav id="nav-bar" class="navigation">
+        <ul>
+            <li class="current"><a href="#">Home</a></li>
+            <li><a href="chamberproject">Chamber Project</a></li>
+            <li><a href="finalproject">Final Project</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Home</h1>
+        <section class="about">
+            <h2>About Me</h2>
+            <p>My name is Joan Carcel, I am from Argentina. I am a student at BYU-Idaho, studying Web Development. I am currently working as a teacher. I'm married and I have two children.</p>
+        </section>
+        <section class="student">
+            <h2>Student Photo</h2>
+            <img src="images/profile.webp" alt="Joan Carcel" width="200" height="250">
+        </section>
+        <section class="certificate">
+            <h2>Web Certificate Courses</h2>
+            <div class="buttons">
+                <button id="all" class="allcourses">All Courses</button>
+                <button id="cse" class="csecourses">CSE Courses</button>
+                <button id="wdd" class="wddcourses">WDD Courses</button>
+            </div>
+            <div class="courses">
+                <div class="course"></div>
+            </div>
+            <p id="totalCredits"></p>
+        </section>
+    </main>
+    <footer>
+        <div class="social">
+            <a href="https://github.com/jmcarcel" target="_blank"><img src="images/githublogo.svg" alt="githublogo" width="20" height="20"></a>
+            <a href="https://www.linkedin.com/in/joan-carcel-713641316/" target="_blank"><img src="images/linkedin.svg" alt="linkedin" width="20" height="20"></a>
+            <a href="https://www.facebook.com/joanmiguel.carcel" target="_blank"><img src="images/facebook.svg" alt="facebook" width="20" height="20"></a>
+        </div>
+        <p>&copy;<span id="currentYear"></span> Joan Carcel - Argentina</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
 </body>
 </html>
