@@ -1,5 +1,9 @@
 {
-    "Lopez family": {
+    "family_name": "Lopez",
+    "move_in_date": "sep 2016",
+    "people_in_the_family": 4,
+    "visited_by_bishopric?": true,
+    "family_members": {
         
     }
 }
