@@ -12,8 +12,8 @@
         {
             "name":"Mercado Libre",
             "adress":"Caseros 3039, Piso 2, CABA",
-            "phone number":"+541150328207",
-            "website url":"https://www.mercadolibre.com.ar/",
+            "phonenumber":"+541150328207",
+            "websiteurl":"https://www.mercadolibre.com.ar/",
             "image":"",
             "membership level": 3,
             "information": "Plataforma de compra en línea"
@@ -21,8 +21,8 @@
         {
             "name":"Aberturas perfil",
             "adress":"URIBURU 2019",
-            "phone number":"(0341) 796-0000",
-            "website url":"https://www.instagram.com/aberturasperfil",
+            "phonenumber":"(0341) 796-0000",
+            "websiteurl":"https://www.instagram.com/aberturasperfil",
             "image":"",
             "membership level": 1,
             "information": "Fabrica de aberturas en chapa y aluminio"
@@ -30,8 +30,8 @@
         {
             "name":"FRÁVEGA",
             "adress":"RIOJA 1040, ROSARIO",
-            "phone number":"(0341) 426-6300",
-            "website url":"https://www.fravega.com/",
+            "phonenumber":"(0341) 426-6300",
+            "websiteurl":"https://www.fravega.com/",
             "image":"",
             "membership level":2,
             "information": "Venta de artículos para el hogar"
@@ -39,8 +39,8 @@
         {
             "name":"Oxford Clean",
             "adress":"Corrientes 324 Local 14, S2000 Rosario, Santa Fe",
-            "phone number":"(0341) 156-757535",
-            "website url":"https://www.oxfordclean.com.ar/",
+            "phonenumber":"(0341) 156-757535",
+            "websiteurl":"https://www.oxfordclean.com.ar/",
             "image":"",
             "membership level":2,
             "information": "Sevicio de limpieza"
@@ -48,8 +48,8 @@
         {
             "name":"Green juegos",
             "adress":"LOS CEIBOS 1186, ROLDAN",
-            "phone number":"(0341) 156-573048",
-            "website url":"https://www.greenjuegos.com/",
+            "phonenumber":"(0341) 156-573048",
+            "websiteurl":"https://www.greenjuegos.com/",
             "image":"",
             "membership level": 1,
             "information": "Fábrica de juegos infantiles"
@@ -57,8 +57,8 @@
         {
             "name":"PERSONAL",
             "adress":"PRESIDENTE ROCA 843, ROSARIO",
-            "phone number":"(0341) 0800-444-83682",
-            "website url":"https://tienda.personal.com.ar/",
+            "phonenumber":"(0341) 0800-444-83682",
+            "websiteurl":"https://tienda.personal.com.ar/",
             "image":"",
             "membership level": 3,
             "information": "Telefonía celular"
