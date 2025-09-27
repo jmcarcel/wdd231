@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber of commerce page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <meta property="og:title" content="Chamber of Commerse - Joan Carcel">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://jmcarcel.github.io/wdd231/">
+    <meta property="og:image" content="">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/members.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/getdate.js" defer></script>
+</head>
+<body>
+    <header>
+        <span>Rosario Chamber of Commerce</span>                      
+        <nav>
+            <ul class="navigation">
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Chamber Project</a></li>
+                <li><a href="Join">Join</a></li>
+                <li><a href="Discover">Discover</a></li>
+            </ul>
+        </nav>           
+    </header>
+
+    <main>
+        <div class="hero-image">
+            <picture>
+                <source srcset="images/rosario-large.webp" media="(min-width: 1000px)">
+                <source srcset="images/rosario-medium.webp" media="(min-width: 750px)">
+                <img src="images/rosario-small.webp" alt="Rosario, Argentina" width="500" height="250">
+            </picture> 
+        </div>
+        <h1>Home</h1>
+        <div class="event">
+            <section><h2>Events</h2></section>
+            <section>
+                <h2>Current Weather</h2>
+                <div class="weather-card">
+                    <p><strong>Temperature:</strong> <span id="temp" class="value"> </span>°C</p>
+                    <p><strong>Conditions:</strong> Partly Cloudy</p>
+                    <p><strong>Wind:</strong> <span id="wind" class="value"> </span></p>
+                    <p><strong>Wind Chill:</strong> <span id="windChill" class="value"> </span>°C</p>
+                </div>
+            </section>
+            <section>
+                <h2>Weather Forecast</h2>
+            </section>
+            
+        </div>   
+        
+        <div id="companies"></div>
+    </main>
+    <footer>
+        <div class="social">
+            <a href="https://github.com/jmcarcel" target="_blank"><img src="images/githublogo.svg" alt="githublogo" width="20" height="20"></a>
+            <a href="https://www.linkedin.com/in/joan-carcel-713641316/" target="_blank"><img src="images/linkedin.svg" alt="linkedin" width="20" height="20"></a>
+            <a href="https://www.facebook.com/joanmiguel.carcel" target="_blank"><img src="images/facebook.svg" alt="facebook" width="20" height="20"></a>
+        </div>
+        <p>&copy;<span id="currentYear"></span> Joan Carcel - Argentina</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>
