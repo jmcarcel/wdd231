@@ -21,8 +21,9 @@ const displayMembers = (members) => {
 
         name.textContent = `${member.name}`;
         information.textContent = `${member.information}`;
-        url.textContent = `WEBSITE: ${member.websiteurl}`;
-        number.textContent = `PHONE: ${member.phonenumber}`;
+        url.href = member["websiteurl"];
+        url.textContent = "Visit website";
+        number.textContent = `PHONE: ${member["phonenumber"]}`;
         
         card.appendChild(name);
         card.appendChild(information);

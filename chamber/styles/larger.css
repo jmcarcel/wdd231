@@ -1,6 +1,6 @@
 @media only screen and (min-width: 38rem) {
     header,main,nav,footer {
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
     }
     header {
@@ -18,4 +18,143 @@
     .navigation a {
         border: none;
     }
+}
+
+@media (min-width: 900px) {
+    main {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .main-title {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .section-container:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .section-container:nth-of-type(2) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .course {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin: 10px 0;
+        flex-wrap: wrap;
+    }
+
+    .course-card {
+        flex: 1;
+    }
+
+    .course-card button {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1000px) {
+    main {
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .main-title {
+        grid-column: 1 / -1;
+    }
+}
+
+@media screen and (min-width: 840px) {
+    .events {
+        flex: 0 0 50%;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    .members {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr),auto-fit);
+    }
+}
+
+.hero-image {
+    width: 100%;
+    max-width: none;
+    height: 600px;
+    position: relative;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    height: auto;
+    width: 100%;
+    object-position: center;
+}
+/* Ensure the container-join has flex display and the children align side by side */
+@media (min-width: 600px) {
+    .container-join {
+        display: flex;
+        /* Add wrap to allow for responsive handling */
+    }
+
+    /* The form's width should not exceed 48% to ensure both fit side by side */
+    form.designOne {
+        width: 48%;
+        margin-right: 20px;
+        padding: 2rem;
+        background-color: #fff;
+        ;
+        border-radius: 8px;
+    }
+
+    /* The memberships div's width should also be 48% */
+    .memberships {
+        width: 48%;
+    }
+
+    /* Ensure membership items have proper spacing */
+    .membership {
+        margin-bottom: 15px;
+    }
+
+    /* Make sure labels and paragraphs have proper spacing */
+    label,
+    p {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+/* Optional: Make them stack vertically on smaller screens */
+@media (max-width: 599px) {
+    .container-join {
+        display: block;
+    }
+
+    form.designOne,
+    .memberships {
+        width: 100%;
+        /* Stack the form and memberships vertically */
+        margin: 0;
+        padding: 2rem;
+    }
+}
+
+@media only screen and (min-width: 64rem) {
+
+    #bussiness div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
 }
