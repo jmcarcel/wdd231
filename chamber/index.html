@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chambers Home Page</title>
+    <meta name="description" content="WDD231 Home page Assignment week 03">
+    <meta name="author" content="Joan Carcel">
+    <meta property="og:title" content="Joan Carcel's page">
+    <meta property="og:description" content=" ">
+    <meta property="og:url" content="https://jmcarcel.github.io/wdd231/">
+    <meta property="og:image" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/getdate.js" defer></script>
+    <script src="scripts/members.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <div>
+            <span>Rosario Chamber of Commerce</span>
+        </div>
+        <nav>
+            <button id="ham-btn" class="hamburguer"></button>
+            <ul class="navigation">
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <picture>
+                <source srcset="images/rosario-large.webp" media="(min-width: 1000px)">
+                <source srcset="images/rosario-medium.webp" media="(min-width: 750px)">
+                <img src="images/rosario-small.webp" alt="Rosario, Argentina" width="500" height="250">
+            </picture>
+        </div>
+        <h1>Home</h1>
+        <section>
+              <div class="event">
+            <h2>Events</h2>
+              </div> 
+        </section>
+        <section>
+            <h2>Current Weather</h2>
+            <p><span id="current-temp"></span></p>     
+            <figure>
+                <img id="weather-icon" src="" alt="">
+                <figcaption></figcaption>
+            </figure>
+        </section>
+        <section>
+                <h2>Weather Forecast</h2>
+                <p><span id="today-temp"></span></p>
+                <p><span id="tomorrow-temp"></span></p>
+                <p><span id="aftertomorrow-temp"></span></p>  
+        </section>
+        <div class="bussiness">
+            <div class="grid" id="bussiness">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="information">
+            <p>Rosario Chamber of commerce</p>
+            <p>Domingo Candia 2844</p>
+            <p>Rosario 2000</p>
+            <p>carceljoan@gmail.com</p>
+            <p>549 341 5482231</p>
+        </div>
+        <div class="social">
+            <a href="https://github.com/jmcarcel" target="_blank"><img src="images/githublogo.svg" alt="githublogo" width="30" height="30"></a>
+            <a href="https://www.linkedin.com/in/joan-carcel-713641316/" target="_blank"><img src="images/linkedin.svg" alt="linkedin" width="30" height="30"></a>
+            <a href="https://www.facebook.com/joanmiguel.carcel" target="_blank"><img src="images/facebook.svg" alt="facebook" width="30" height="30"></a>
+        </div>
+        <div class="update">
+            <p>WDD231 Class project</p>
+            <p>Joan Carcel</p>
+            <p>&copy;<span id="currentYear"></span> Rosario Chamber of commerce</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+</html>
