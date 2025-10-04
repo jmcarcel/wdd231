@@ -5,7 +5,7 @@
 }
 header {
     display: grid;
-    grid-template-columns: 24px auto 44px;
+    grid-template-columns: 1fr 2fr;
     padding: 5px 0 5px 10px;
     align-items: center;
     border-bottom: solid 1px #ddd;
@@ -32,27 +32,27 @@ header span {
 .hamburguer.show::before{
     content: "\00D7";
 }
+
 .navigation {
     display: none;
+    list-style: none;
 }
 .navigation.show {
     display: block;
 }
-.navigation ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+
 .navigation a {
     display: block;
+    text-align: center;
     padding: .8rem 10px;
     color: rgb(57, 57, 116);
     text-decoration: none;
     border-bottom: solid 1px #ddd;
     font-size: 20px;
 }
-.navigation li.current {
-    background-color: #c1b3ff;
+.navigation li {
+    display: inline-block;
+    margin-right: 10px;
 }
 .navigation a:hover {
     background-color: #656ee6;
@@ -82,7 +82,8 @@ h1 {
     flex-wrap: wrap;
     gap: 1rem;
     width: 100%;
-    margin: 10px;
+    margin: 30px;
+    padding: 20px;
 }
 h2 {
     display: flex;

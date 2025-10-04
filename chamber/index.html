@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/app.js" defer></script>
     <script src="scripts/getdate.js" defer></script>
     <script src="scripts/members.js" defer></script>
     <script src="scripts/weather.js" defer></script>
@@ -26,8 +27,9 @@
         <div>
             <span>Rosario Chamber of Commerce</span>
         </div>
-        <nav>
-            <button id="ham-btn" class="hamburguer"></button>
+        <button id="ham-btn" class="hamburguer"></button>
+    
+        <nav>  
             <ul class="navigation">
                 <li class="current"><a href="index.html">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
@@ -45,29 +47,29 @@
             </picture>
         </div>
         <h1>Home</h1>
-        <section>
-              <div class="event">
-            <h2>Events</h2>
-              </div> 
-        </section>
-        <section>
-            <h2>Current Weather</h2>
-            <p><span id="current-temp"></span></p>     
-            <figure>
-                <img id="weather-icon" src="" alt="">
-                <figcaption></figcaption>
-            </figure>
-        </section>
-        <section>
+        <div class="event">
+            <section>  
+                <h2>Events</h2>
+            </section> 
+            <section>
+                <h2>Current Weather</h2>
+                <p><span id="current-temp"></span></p>     
+                <figure>
+                    <img id="weather-icon" src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+            </section>
+            <section>
                 <h2>Weather Forecast</h2>
                 <p><span id="today-temp"></span></p>
                 <p><span id="tomorrow-temp"></span></p>
                 <p><span id="aftertomorrow-temp"></span></p>  
-        </section>
-        <div class="bussiness">
-            <div class="grid" id="bussiness">
+            </section>
+        </div>    
+            <div class="members" id="companies">
+               <div class="grid" >
+               </div>
             </div>
-        </div>
     </main>
     <footer>
         <div class="information">

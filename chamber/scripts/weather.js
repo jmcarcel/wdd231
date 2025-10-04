@@ -60,8 +60,9 @@ function displayWeekdays() {
 
 displayWeekdays()
 
+let urlToday = `https://api.openweathermap.org/data/2.5/forecast?lat=-32.95&lon=-60.69&appid=093aea2f8d23da3b4d5838f48f4e5459&units=metric`;
+
 async function apiFetchForecast() {
-    let urlToday = `https://api.openweathermap.org/data/2.5/weather?lat=-32.95&lon=-60.69&appid=093aea2f8d23da3b4d5838f48f4e5459&units=metric`;
 
     //console.log(urlToday);
     try {
@@ -69,6 +70,7 @@ async function apiFetchForecast() {
         if (response.ok) {
             const data = await response.json();
             console.log(data);
+            displayWeekdays(data);
             todayTemp.innerHTML += `${(data.list[4].main.temp)}&deg;C`;
             tomorrowTemp.innerHTML += `${(data.list[12].main.temp)}&deg;C`;
             afterTomorrowTemp.innerHTML += `${(data.list[20].main.temp)}&deg;C`;
