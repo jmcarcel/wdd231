@@ -170,3 +170,7 @@ input {
     background-color: #aaadd1;
     margin: 20px;
 }
+dialog {
+    background-color: #4750ce;
+    color: #eee;
+}
