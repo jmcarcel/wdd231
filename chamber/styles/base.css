@@ -4,21 +4,25 @@
     font-family: "Inter";
 }
 header {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    padding: 5px 0 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    padding:  10px 20px;
     align-items: center;
     border-bottom: solid 1px #ddd;
     column-gap: 8px; 
+    height: 100px;
 }
 header img {
     display: block;
     width: 100%;
     height: auto;
 }
-header span {
+header div span {
+    white-space: nowrap;
+    display: inline-block;
     font-size: 2rem;
     color: rgb(57, 57, 116);
+    margin-left: 20px;
 }
 .hamburguer {
     background: none;
