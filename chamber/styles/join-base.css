@@ -4,21 +4,25 @@
     font-family: "Inter";
 }
 header {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    padding: 5px 0 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    padding:  10px 20px;
     align-items: center;
     border-bottom: solid 1px #ddd;
     column-gap: 8px; 
+    height: 100px;
 }
 header img {
     display: block;
     width: 100%;
     height: auto;
 }
-header span {
+header div span {
+    white-space: nowrap;
+    display: inline-block;
     font-size: 2rem;
     color: rgb(57, 57, 116);
+    margin-left: 20px;
 }
 .hamburguer {
     background: none;
@@ -57,11 +61,12 @@ header span {
 .navigation a:hover {
     background-color: #656ee6;
 }
-main {
+.container-join {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 0;
     padding: 10px;
+    background-color: #dcd2f5;
 }
 .about {
     padding: 0;
@@ -114,15 +119,8 @@ h2 {
 .buttons button:hover {
     background-color: #ddd;
 }
-.members {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 5px;
-	align-items: center;
-}
 section {
     text-align: center;
-    margin: 0.1 rem;
 }
 
 footer {
@@ -169,6 +167,10 @@ input {
 .membership {
     background-color: #aaadd1;
     margin: 20px;
+    padding: 10px;
+}
+#membership-levels{
+    margin-top: 100px;
 }
 dialog {
     background-color: #4750ce;
