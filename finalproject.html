@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Knight Webpage</title>
+    <meta name="description" content="A page dedicated to the chess knight piece, its movements, and strategies.">
+    <meta name="author" content="Joan Carcel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/finalproject.css">
+    <script src="scripts/finalproject.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <img src="images/chessknight-image.jpg" alt="Chess Knight Logo" width="200">
+        <h1>Chess Knight</h1>
+        <a id="menu" href="#"></a>
+        <nav>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" id="learn">Learn</a></li>
+                <li><a href="#" id="players">Players</a></li>
+                <li><a href="#">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <picture>
+            <source srcset="images/hero-large.webp" media="(min-width: 1200px)">
+            <source srcset="images/hero-medium.webp" media="(min-width: 800px)">
+            <img src="images/hero-small.webp" alt="Magnus Carlsen" loading="lazy" width="600" height="400">
+            <figcaption>Magnus Carlsen, World Chess number 1</figcaption>
+        </picture>
+        <div class="chess"></div>
+        <p><span class="label">Number of visits: </span></p>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Joan Carcel - Argentina</p>
+        <p>Last Modification: <span id="lastModified"></span><span class="visits"></span></p>
+    </footer>
+</body>
+</html>
