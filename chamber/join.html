@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chambers Home Page</title>
+    <meta name="description" content="WDD231 Home page Assignment week 03">
+    <meta name="author" content="Joan Carcel">
+    <meta property="og:title" content="Joan Carcel's page">
+    <meta property="og:description" content=" ">
+    <meta property="og:url" content="https://jmcarcel.github.io/wdd231/">
+    <meta property="og:image" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/join-base.css">
+    <link rel="stylesheet" href="styles/join-larger.css">
+    <script src="scripts/app.js" defer></script>
+    <script src="scripts/getdate.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <div>
+            <span>Rosario Chamber of Commerce</span>
+        </div>
+        <button id="ham-btn" class="hamburguer"></button>
+    
+        <nav>  
+            <ul class="navigation">
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-join">
+            <div class="container-in-main">
+                <h1>Membership Application Form</h1>
+                <form method="GET" action="thankyou.html" class="designOne">
+                    <label>First Name <input type="text" name="first" required autocomplete="given-name"
+                            title="Your First Name"></label>
+
+                    <label>Last Name <input type="text" name="last" required autocomplete="family-name"
+                            title="Your Last Name"></label>
+
+                    <label>Organizational Title
+                        <input type="text" name="title" required autocomplete="organization-title"
+                            title="Organizational Title" pattern="[A-Za-z\s\-]{7,}"> </label>
+
+                    <label>Email <input type="email" name="email" required placeholder="john89@gmail.com"
+                            title="Your Email" autocomplete="email"></label>
+
+                    <label>Cell Phone <input type="tel" name="phone" autocomplete="tel"
+                            title="A Phone Number with dashes" placeholder="987-555-1234"></label>
+
+                    <label>Organization's name <input type="text" name="organization-name" required
+                            autocomplete="organization" title="Organization's name"></label>
+
+                    <label>Business/Organization's Description
+                        <textarea name="organization-description" required autocomplete="organization"
+                            title="Organization's description"></textarea>
+
+                    </label>
+                    <label>Membership level
+                        <select name="membership" required>
+                            <option value="">None</option>
+                            <option value="NP">NP</option>
+                            <option value="Bronze">Bronze</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Gold">Gold</option>
+                        </select>
+                    </label>
+
+                    <input type="hidden" name="timestamp" id="timestamp">
+
+                    <input type="submit" value="Apply for Membership">
+                </form>
+            </div>
+            <div class="container-in-main" id="membership-levels">
+                <h2>Membership Levels</h2>
+                <div class="membership">
+                    <p>Non Profit Membership Level</p>
+                    <button type="button" title="np-learn-more" id="np-learn-more">Learn More</button>
+                </div>
+
+                <div class="membership">
+                    <p>Bronze Membership Level</p>
+                    <button type="button" title="bronze-learn-more" id="bronze-learn-more">Learn More</button>
+                </div>
+
+                <div class="membership">
+                    <p>Silver Membership Level</p>
+                    <button type="button" title="silver-learn-more" id="silver-learn-more">Learn More</button>
+                </div>
+
+                <div class="membership">
+                    <p>Gold Membership Level</p>
+                    <button type="button" title="gold-learn-more" id="gold-learn-more">Learn More</button>
+                </div>
+                <!-- Dialog Modals -->
+                <dialog id="npModal" class="dialog-card">
+                    <h2>Non-Profit Membership</h2>
+                    <p>Access to basic events and newsletters.</p>
+                    <button id="closeNpModal">Close</button>
+
+                </dialog>
+
+                <dialog id="bronzeModal" class="dialog-card">
+                    <h2>Bronze Membership</h2>
+                    <p>Includes event discounts and advertising options.</p>
+                    <button id="closeBronzeModal">Close</button>
+                </dialog>
+
+                <dialog id="silverModal" class="dialog-card">
+                    <h2>Silver Membership</h2>
+                    <p>Priority event access and spotlight positions.</p>
+                    <button id="closeGoldModal">Close</button>
+                </dialog>
+
+                <dialog id="goldModal" class="dialog-card">
+                    <h2>Gold Membership</h2>
+                    <p>Exclusive events, training, and advertising benefits.</p>
+                    <button id="closeModal">Close</button>
+                </dialog>
+            </div>
+        </div>
+
+    <footer>
+        <div class="information">
+            <p>Rosario Chamber of commerce</p>
+            <p>Domingo Candia 2844</p>
+            <p>Rosario 2000</p>
+            <p>carceljoan@gmail.com</p>
+            <p>549 341 5482231</p>
+        </div>
+        <div class="social">
+            <a href="https://github.com/jmcarcel" target="_blank"><img src="images/githublogo.svg" alt="githublogo" width="30" height="30"></a>
+            <a href="https://www.linkedin.com/in/joan-carcel-713641316/" target="_blank"><img src="images/linkedin.svg" alt="linkedin" width="30" height="30"></a>
+            <a href="https://www.facebook.com/joanmiguel.carcel" target="_blank"><img src="images/facebook.svg" alt="facebook" width="30" height="30"></a>
+        </div>
+        <div class="update">
+            <p>WDD231 Class project</p>
+            <p>Joan Carcel</p>
+            <p>&copy;<span id="currentYear"></span> Rosario Chamber of commerce</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+</html>
