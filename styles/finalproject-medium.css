@@ -1,0 +1,17 @@
+@media only screen and (min-width: 38rem) {
+
+  #bussiness div {
+    grid-template-areas:
+      "photograph name"
+      "photograph description"
+      "photograph location"
+    ;
+  }
+  .hamburguer {
+        display: none;
+    }
+    ul.navigation, ul.navigation.open {
+        display: block;
+    }
+
+}

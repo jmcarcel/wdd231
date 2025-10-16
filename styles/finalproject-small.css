@@ -1,0 +1,119 @@
+:root {
+    --primary-color: #353535;
+    --secondary-color: #c29d88;
+    --text-color: #f1f1f1;
+}
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter";
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    border-bottom: solid 1px #ddd;
+    column-gap: 8px; 
+    height: 150px;
+    background-color: #353535;
+}
+header img {
+    display: block;
+    width: 15%;
+    height: auto;
+}
+header span {
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 3rem;
+    color: var(--text-color);
+
+}
+nav {
+    background-color: #353535;
+}
+.hamburguer {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 2.4rem;
+    padding: .25rem 2vw;
+    text-align: right;
+    width: 100%;
+}
+.hamburguer::before {
+    content: "\2630";
+    
+}
+.hamburguer.open::before{
+    content: "\00D7";
+}
+
+ul.navigation li a {
+    display: block;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    font-size: 20px;
+    padding: .70rem 2vw;
+    color: var(--text-color);
+}
+li.current a {
+    background-color: #c29d88;
+}
+ul.navigation {
+    display: none;
+}
+ul.navigation.open {
+    display: block;
+}
+ul.navigation li {
+    display: inline-block;
+    margin-right: 10px;
+}
+ul.navigation a:hover {
+    background-color: var(--secondary-color);
+}
+
+main {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+.chess {
+    font-size: 20px;
+    margin: 20px;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--color-text);
+    margin: 10px;
+}
+.social {
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+}
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: #ccc solid 1px;
+    border-radius: 5px;
+    margin: 10px;
+}
+.social a:hover {
+    background-color: #ddd;
+}
