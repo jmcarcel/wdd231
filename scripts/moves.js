@@ -5,7 +5,7 @@ const cards = document.querySelector('#moves');
 async function getMoves() {
     const response = await fetch(moves);
     const data = await response.json(); // parse the JSON data
-    console.table(data.pieces);
+    console.log(data.pieces);
     displayMoves(data.pieces);
 }
 getMoves();
@@ -14,20 +14,20 @@ const displayMoves = (pieces) => {
     pieces.forEach((piece) => {
         let card = document.createElement('section');
         let id = document.createElement('h2');
-        let movement = document.createElement('p');
-        let url = document.createElement('a');
-        let number = document.createElement('p');
+        let movement = document.createElement('div');
 
         id.textContent = `${piece.name}`;
-        movement.textContent = `${piece.movement}`;
-        url.href = member["websiteurl"];
-        url.textContent = "Visit website";
-        number.textContent = `PHONE: ${member["phonenumber"]}`;
+        
+        for (const key in piece.movement) {
+            const p = document.createElement("p");
+            let value = piece.movement[key];
+            if (Array.isArray(value)) value = value.join(",");
+            p.innerHTML = `<strong>${key}:<strong> ${value}`;
+            movement.appendChild(p);
+        }
         
         card.appendChild(id);
         card.appendChild(movement);
-        card.appendChild(url);
-        card.appendChild(number);
 
         cards.appendChild(card);
     });

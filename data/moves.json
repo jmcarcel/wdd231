@@ -1,187 +1,199 @@
 {
   "board": {
     "size": "8x8",
-    "files": ["a","b","c","d","e","f","g","h"],
-    "ranks": [1,2,3,4,5,6,7,8],
-    "note": "La esquina inferior derecha (desde las blancas) es siempre blanca (h1)."
+    "files": ["a", "b", "c", "d", "e", "f", "g", "h"],
+    "ranks": [1, 2, 3, 4, 5, 6, 7, 8],
+    "note": "The lower-right square (from White's perspective) is always light (h1)."
   },
   "pieces": [
     {
       "id": "pawn",
-      "name": "Peón",
+      "name": "Pawn",
       "symbol_white": "♙",
-      "symbol_black": "♟︎",
+      "symbol_black": "♟",
+      "image_white": "images/pawn_white.png",
+      "image_black": "images/pawn_black.png",
       "movement": {
         "advance": {
-          "normal": "1 casilla hacia adelante",
-          "first_move": "opcionalmente 2 casillas hacia adelante si no se ha movido antes"
+          "normal": "1 square forward",
+          "first_move": "optionally 2 squares forward if not moved yet"
         },
-        "capture": "1 casilla en diagonal hacia adelante (izquierda o derecha)",
+        "capture": "1 square diagonally forward (left or right)",
         "cannot_move_backward": true,
         "special_captures": ["en_passant"]
       },
       "promotion": {
-        "when": "al llegar a la última fila (fila 8 para blancas, fila 1 para negras)",
-        "options": ["Dama", "Torre", "Alfil", "Caballo"],
-        "default_recomendation": "Dama"
+        "when": "upon reaching the opposite end of the board (rank 8 for White, rank 1 for Black)",
+        "options": ["Queen", "Rook", "Bishop", "Knight"],
+        "default_recommendation": "Queen"
       },
       "examples": [
-        {"position": "e2 -> e3", "notes": "avance 1 casilla"},
-        {"position": "e2 -> e4", "notes": "primer movimiento: avance 2 casillas"},
-        {"position": "d5 captura c6", "notes": "captura diagonal"}
+        {"position": "e2 -> e3", "notes": "normal advance"},
+        {"position": "e2 -> e4", "notes": "double advance on first move"},
+        {"position": "d5 captures c6", "notes": "diagonal capture"}
       ]
     },
     {
       "id": "rook",
-      "name": "Torre",
+      "name": "Rook",
       "symbol_white": "♖",
       "symbol_black": "♜",
+      "image_white": "images/rook_white.png",
+      "image_black": "images/rook_black.png",
       "movement": {
-        "type": "lineal",
+        "type": "linear",
         "directions": ["horizontal", "vertical"],
-        "range": "cualquier número de casillas sin piezas intermedias"
+        "range": "any number of squares without jumping over pieces"
       },
-      "capture": "mismo movimiento que el de desplazamiento (ocupa la casilla de la pieza rival)",
+      "capture": "same as movement (occupies the enemy piece's square)",
       "examples": [
-        {"position": "a1 -> a8", "notes": "sube por la columna a si no hay piezas en el camino"},
-        {"position": "h4 -> d4", "notes": "mueve por la fila 4 hasta d4"}
+        {"position": "a1 -> a8", "notes": "moves vertically up the file"},
+        {"position": "h4 -> d4", "notes": "moves horizontally across the rank"}
       ]
     },
     {
       "id": "knight",
-      "name": "Caballo",
+      "name": "Knight",
       "symbol_white": "♘",
       "symbol_black": "♞",
+      "image_white": "images/knight_white.png",
+      "image_black": "images/knight_black.png",
       "movement": {
-        "pattern": "L",
-        "details": "2 casillas en una dirección (horizontal o vertical) + 1 casilla perpendicular",
+        "pattern": "L-shape",
+        "details": "2 squares in one direction (horizontal or vertical) + 1 square perpendicular",
         "can_jump": true
       },
-      "capture": "en la casilla final del salto",
+      "capture": "lands on and replaces the opponent's piece",
       "examples": [
-        {"position": "g1 -> f3", "notes": "salto típico de salida para blancas"},
-        {"position": "b1 -> c3", "notes": "otro salto típico"}
+        {"position": "g1 -> f3", "notes": "typical opening move for White"},
+        {"position": "b1 -> c3", "notes": "another common knight jump"}
       ]
     },
     {
       "id": "bishop",
-      "name": "Alfil",
+      "name": "Bishop",
       "symbol_white": "♗",
       "symbol_black": "♝",
+      "image_white": "images/bishop_white.png",
+      "image_black": "images/bishop_black.png",
       "movement": {
         "type": "diagonal",
-        "range": "cualquier número de casillas en diagonal sin piezas intermedias",
-        "color_bound": "permanece siempre en el color de la casilla donde comenzó"
+        "range": "any number of squares diagonally without jumping",
+        "color_bound": "remains on the same color of square it starts on"
       },
-      "capture": "mismo movimiento que el de desplazamiento (ocupando la casilla rival)",
+      "capture": "same as movement",
       "examples": [
-        {"position": "c1 -> g5", "notes": "alfil en c1 avanza por la diagonal"},
-        {"position": "f8 -> a3", "notes": "alfil negro por la diagonal larga"}
+        {"position": "c1 -> g5", "notes": "bishop moves along a diagonal"},
+        {"position": "f8 -> a3", "notes": "long diagonal move"}
       ]
     },
     {
       "id": "queen",
-      "name": "Dama",
+      "name": "Queen",
       "symbol_white": "♕",
       "symbol_black": "♛",
+      "image_white": "images/queen_white.png",
+      "image_black": "images/queen_black.png",
       "movement": {
-        "type": "combinado",
-        "details": "combina movimientos de torre y alfil: horizontal, vertical y diagonal",
-        "range": "cualquier número de casillas sin piezas intermedias"
+        "type": "combined",
+        "details": "combines rook and bishop moves: horizontally, vertically, or diagonally",
+        "range": "any number of squares without jumping"
       },
-      "capture": "mismo movimiento que el de desplazamiento",
+      "capture": "same as movement",
       "examples": [
-        {"position": "d1 -> d4", "notes": "sube por la columna d"},
-        {"position": "d1 -> g4", "notes": "diagonal o línea según posición"}
+        {"position": "d1 -> d4", "notes": "vertical move"},
+        {"position": "d1 -> g4", "notes": "diagonal move"}
       ]
     },
     {
       "id": "king",
-      "name": "Rey",
+      "name": "King",
       "symbol_white": "♔",
       "symbol_black": "♚",
+      "image_white": "images/king_white.png",
+      "image_black": "images/king_black.png",
       "movement": {
-        "type": "corto",
-        "details": "1 casilla en cualquier dirección (horizontal, vertical, diagonal)",
+        "type": "short",
+        "details": "1 square in any direction (horizontal, vertical, diagonal)",
         "cannot_move_into_check": true
       },
-      "capture": "ocupa la casilla de la pieza rival (si la casilla no está protegida)",
+      "capture": "moves onto the opponent's piece (if safe)",
       "special": ["castling"],
       "examples": [
-        {"position": "e1 -> e2", "notes": "movimiento de una casilla"},
-        {"position": "e1 -> g1", "notes": "enroque corto (ver sección de enroque)"}
+        {"position": "e1 -> e2", "notes": "simple one-square move"},
+        {"position": "e1 -> g1", "notes": "kingside castling"}
       ]
     }
   ],
   "special_rules": {
     "castling": {
-      "names": ["enroque corto", "enroque largo"],
-      "description": "Movimiento conjunto del rey y la torre: el rey se mueve dos casillas hacia la torre, y la torre salta al lado opuesto del rey.",
+      "names": ["kingside castling", "queenside castling"],
+      "description": "A special move involving the king and a rook. The king moves two squares toward the rook, and the rook moves to the square next to the king on the opposite side.",
       "conditions": [
-        "Ni el rey ni la torre involucrada deben haber movido antes.",
-        "No puede haber piezas entre el rey y la torre.",
-        "El rey no puede estar en jaque antes del enroque.",
-        "El rey no puede pasar por una casilla que esté atacada por una pieza enemiga.",
-        "La casilla final del rey no puede estar en jaque."
+        "Neither the king nor the involved rook has moved before.",
+        "No pieces between the king and rook.",
+        "The king cannot be in check before, during, or after castling."
       ],
       "examples": [
-        {"short": "Blancas: rey e1 + torre h1 -> rey g1, torre f1"},
-        {"long": "Blancas: rey e1 + torre a1 -> rey c1, torre d1"}
+        {"short": "White: king e1 + rook h1 -> king g1, rook f1"},
+        {"long": "White: king e1 + rook a1 -> king c1, rook d1"}
       ]
     },
     "en_passant": {
-      "description": "Captura especial de peón disponible inmediatamente después de que un peón adversario avance 2 casillas desde su casilla inicial y termine al lado de tu peón.",
+      "description": "A special pawn capture available immediately after an opposing pawn advances two squares and lands beside your pawn.",
       "conditions": [
-        "Solo es válido en el movimiento inmediatamente siguiente al avance de 2 casillas del peón rival.",
-        "El peón que captura se mueve diagonalmente a la casilla por la que pasó el peón rival y lo elimina."
+        "Can only be performed immediately after the opponent's double pawn move.",
+        "The capturing pawn moves diagonally to the square the enemy pawn passed through."
       ],
-      "example": "Peón blanco en e5, peón negro juega d7->d5 en un turno; blanco puede capturar en d6 (en passant) sólo en la respuesta inmediata."
+      "example": "White pawn on e5, Black plays d7->d5; White can capture en passant on d6 only on the next move."
     },
     "promotion": {
-      "description": "Cuando un peón alcanza la última fila se sustituye por otra pieza (Dama/Torre/Alfil/Caballo) del mismo color, elegida por el jugador.",
+      "description": "When a pawn reaches the final rank, it must be promoted to another piece (Queen, Rook, Bishop, or Knight) of the same color.",
       "notes": [
-        "La elección es inmediata y obligatoria.",
-        "No hay restricción de piezas ya capturadas (puedes tener más de una dama)."
+        "Promotion is mandatory.",
+        "You may have multiple queens or other pieces."
       ],
-      "example": "Peón blanco en e7 -> e8 = Dama"
+      "example": "White pawn e7 -> e8 = Queen"
     },
     "draws": {
       "types": [
-        {"stalemate": "Jugador no tiene movimiento legal y su rey no está en jaque (tablas)."},
-        {"threefold_repetition": "La misma posición ocurre tres veces con el mismo jugador para mover; reclamable como tablas."},
-        {"fifty_move_rule": "Cincuenta movimientos consecutivos sin captura ni movimiento de peón; reclamable como tablas."}
+        {"stalemate": "The player has no legal moves and their king is not in check (draw)."},
+        {"threefold_repetition": "The same position occurs three times with the same player to move; draw may be claimed."},
+        {"fifty_move_rule": "Fifty consecutive moves without a pawn move or capture; draw may be claimed."}
       ]
     }
   },
   "notation_examples": {
     "algebraic": {
-      "description": "Notación algebraica estándar: pieza (K,Q,R,B,N; peones no llevan letra) + casilla destino. 'x' indica captura. '+' jaque. '#' jaque mate.",
+      "description": "Standard chess notation: piece letter (K,Q,R,B,N; pawns omit the letter) + destination square. 'x' means capture, '+' check, '#' checkmate.",
       "examples": [
-        {"move": "e4", "meaning": "peón a e4"},
-        {"move": "Nf3", "meaning": "caballo a f3"},
-        {"move": "Bxe6", "meaning": "alfil captura en e6"},
-        {"move": "O-O", "meaning": "enroque corto"},
-        {"move": "O-O-O", "meaning": "enroque largo"}
+        {"move": "e4", "meaning": "pawn to e4"},
+        {"move": "Nf3", "meaning": "knight to f3"},
+        {"move": "Bxe6", "meaning": "bishop captures on e6"},
+        {"move": "O-O", "meaning": "kingside castling"},
+        {"move": "O-O-O", "meaning": "queenside castling"}
       ]
     }
   },
   "usage_suggestions": {
     "practice": [
-      "Coloca piezas en el tablero y practica cada movimiento por separado.",
-      "Haz ejercicios: por ejemplo, mueve solo caballos durante 10 minutos, luego peones, etc.",
-      "Juega partidas rápidas para familiarizarte con el flujo del juego."
+      "Place pieces on a board and practice each movement individually.",
+      "Do drills: for example, move only knights for 10 minutes, then pawns, etc.",
+      "Play short games to become familiar with the flow of play."
     ],
     "study_order_recommendation": [
-      "1) Peones y rey (reglas básicas y coronación).",
-      "2) Caballo y alfil (saltos y diagonales).",
-      "3) Torre y dama (movimientos lineales largos).",
-      "4) Enroque y en passant (reglas especiales).",
-      "5) Notación algebraica para registrar partidas."
+      "1) Pawns and King (basic movement and promotion).",
+      "2) Knight and Bishop (jumping and diagonals).",
+      "3) Rook and Queen (long-range movement).",
+      "4) Castling and en passant (special rules).",
+      "5) Algebraic notation for recording games."
     ]
   },
   "metadata": {
-    "language": "es",
-    "generated_for": "usuario",
-    "notes": "JSON diseñado para integrarse en tutoriales, apps o ejercicios. Si necesitas otro esquema (por ejemplo, con coordenadas iniciales o imágenes), dímelo y lo adapto."
+    "language": "en",
+    "generated_for": "user",
+    "images_source_note": "Replace the 'images/...' URLs with your own asset paths or online chess icons (e.g., from Wikimedia or Lichess).",
+    "purpose": "Structured JSON for use in tutorials, educational apps, or visualization tools."
   }
 }
+
