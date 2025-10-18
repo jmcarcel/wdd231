@@ -1,0 +1,187 @@
+{
+  "board": {
+    "size": "8x8",
+    "files": ["a","b","c","d","e","f","g","h"],
+    "ranks": [1,2,3,4,5,6,7,8],
+    "note": "La esquina inferior derecha (desde las blancas) es siempre blanca (h1)."
+  },
+  "pieces": [
+    {
+      "id": "pawn",
+      "name": "Peón",
+      "symbol_white": "♙",
+      "symbol_black": "♟︎",
+      "movement": {
+        "advance": {
+          "normal": "1 casilla hacia adelante",
+          "first_move": "opcionalmente 2 casillas hacia adelante si no se ha movido antes"
+        },
+        "capture": "1 casilla en diagonal hacia adelante (izquierda o derecha)",
+        "cannot_move_backward": true,
+        "special_captures": ["en_passant"]
+      },
+      "promotion": {
+        "when": "al llegar a la última fila (fila 8 para blancas, fila 1 para negras)",
+        "options": ["Dama", "Torre", "Alfil", "Caballo"],
+        "default_recomendation": "Dama"
+      },
+      "examples": [
+        {"position": "e2 -> e3", "notes": "avance 1 casilla"},
+        {"position": "e2 -> e4", "notes": "primer movimiento: avance 2 casillas"},
+        {"position": "d5 captura c6", "notes": "captura diagonal"}
+      ]
+    },
+    {
+      "id": "rook",
+      "name": "Torre",
+      "symbol_white": "♖",
+      "symbol_black": "♜",
+      "movement": {
+        "type": "lineal",
+        "directions": ["horizontal", "vertical"],
+        "range": "cualquier número de casillas sin piezas intermedias"
+      },
+      "capture": "mismo movimiento que el de desplazamiento (ocupa la casilla de la pieza rival)",
+      "examples": [
+        {"position": "a1 -> a8", "notes": "sube por la columna a si no hay piezas en el camino"},
+        {"position": "h4 -> d4", "notes": "mueve por la fila 4 hasta d4"}
+      ]
+    },
+    {
+      "id": "knight",
+      "name": "Caballo",
+      "symbol_white": "♘",
+      "symbol_black": "♞",
+      "movement": {
+        "pattern": "L",
+        "details": "2 casillas en una dirección (horizontal o vertical) + 1 casilla perpendicular",
+        "can_jump": true
+      },
+      "capture": "en la casilla final del salto",
+      "examples": [
+        {"position": "g1 -> f3", "notes": "salto típico de salida para blancas"},
+        {"position": "b1 -> c3", "notes": "otro salto típico"}
+      ]
+    },
+    {
+      "id": "bishop",
+      "name": "Alfil",
+      "symbol_white": "♗",
+      "symbol_black": "♝",
+      "movement": {
+        "type": "diagonal",
+        "range": "cualquier número de casillas en diagonal sin piezas intermedias",
+        "color_bound": "permanece siempre en el color de la casilla donde comenzó"
+      },
+      "capture": "mismo movimiento que el de desplazamiento (ocupando la casilla rival)",
+      "examples": [
+        {"position": "c1 -> g5", "notes": "alfil en c1 avanza por la diagonal"},
+        {"position": "f8 -> a3", "notes": "alfil negro por la diagonal larga"}
+      ]
+    },
+    {
+      "id": "queen",
+      "name": "Dama",
+      "symbol_white": "♕",
+      "symbol_black": "♛",
+      "movement": {
+        "type": "combinado",
+        "details": "combina movimientos de torre y alfil: horizontal, vertical y diagonal",
+        "range": "cualquier número de casillas sin piezas intermedias"
+      },
+      "capture": "mismo movimiento que el de desplazamiento",
+      "examples": [
+        {"position": "d1 -> d4", "notes": "sube por la columna d"},
+        {"position": "d1 -> g4", "notes": "diagonal o línea según posición"}
+      ]
+    },
+    {
+      "id": "king",
+      "name": "Rey",
+      "symbol_white": "♔",
+      "symbol_black": "♚",
+      "movement": {
+        "type": "corto",
+        "details": "1 casilla en cualquier dirección (horizontal, vertical, diagonal)",
+        "cannot_move_into_check": true
+      },
+      "capture": "ocupa la casilla de la pieza rival (si la casilla no está protegida)",
+      "special": ["castling"],
+      "examples": [
+        {"position": "e1 -> e2", "notes": "movimiento de una casilla"},
+        {"position": "e1 -> g1", "notes": "enroque corto (ver sección de enroque)"}
+      ]
+    }
+  ],
+  "special_rules": {
+    "castling": {
+      "names": ["enroque corto", "enroque largo"],
+      "description": "Movimiento conjunto del rey y la torre: el rey se mueve dos casillas hacia la torre, y la torre salta al lado opuesto del rey.",
+      "conditions": [
+        "Ni el rey ni la torre involucrada deben haber movido antes.",
+        "No puede haber piezas entre el rey y la torre.",
+        "El rey no puede estar en jaque antes del enroque.",
+        "El rey no puede pasar por una casilla que esté atacada por una pieza enemiga.",
+        "La casilla final del rey no puede estar en jaque."
+      ],
+      "examples": [
+        {"short": "Blancas: rey e1 + torre h1 -> rey g1, torre f1"},
+        {"long": "Blancas: rey e1 + torre a1 -> rey c1, torre d1"}
+      ]
+    },
+    "en_passant": {
+      "description": "Captura especial de peón disponible inmediatamente después de que un peón adversario avance 2 casillas desde su casilla inicial y termine al lado de tu peón.",
+      "conditions": [
+        "Solo es válido en el movimiento inmediatamente siguiente al avance de 2 casillas del peón rival.",
+        "El peón que captura se mueve diagonalmente a la casilla por la que pasó el peón rival y lo elimina."
+      ],
+      "example": "Peón blanco en e5, peón negro juega d7->d5 en un turno; blanco puede capturar en d6 (en passant) sólo en la respuesta inmediata."
+    },
+    "promotion": {
+      "description": "Cuando un peón alcanza la última fila se sustituye por otra pieza (Dama/Torre/Alfil/Caballo) del mismo color, elegida por el jugador.",
+      "notes": [
+        "La elección es inmediata y obligatoria.",
+        "No hay restricción de piezas ya capturadas (puedes tener más de una dama)."
+      ],
+      "example": "Peón blanco en e7 -> e8 = Dama"
+    },
+    "draws": {
+      "types": [
+        {"stalemate": "Jugador no tiene movimiento legal y su rey no está en jaque (tablas)."},
+        {"threefold_repetition": "La misma posición ocurre tres veces con el mismo jugador para mover; reclamable como tablas."},
+        {"fifty_move_rule": "Cincuenta movimientos consecutivos sin captura ni movimiento de peón; reclamable como tablas."}
+      ]
+    }
+  },
+  "notation_examples": {
+    "algebraic": {
+      "description": "Notación algebraica estándar: pieza (K,Q,R,B,N; peones no llevan letra) + casilla destino. 'x' indica captura. '+' jaque. '#' jaque mate.",
+      "examples": [
+        {"move": "e4", "meaning": "peón a e4"},
+        {"move": "Nf3", "meaning": "caballo a f3"},
+        {"move": "Bxe6", "meaning": "alfil captura en e6"},
+        {"move": "O-O", "meaning": "enroque corto"},
+        {"move": "O-O-O", "meaning": "enroque largo"}
+      ]
+    }
+  },
+  "usage_suggestions": {
+    "practice": [
+      "Coloca piezas en el tablero y practica cada movimiento por separado.",
+      "Haz ejercicios: por ejemplo, mueve solo caballos durante 10 minutos, luego peones, etc.",
+      "Juega partidas rápidas para familiarizarte con el flujo del juego."
+    ],
+    "study_order_recommendation": [
+      "1) Peones y rey (reglas básicas y coronación).",
+      "2) Caballo y alfil (saltos y diagonales).",
+      "3) Torre y dama (movimientos lineales largos).",
+      "4) Enroque y en passant (reglas especiales).",
+      "5) Notación algebraica para registrar partidas."
+    ]
+  },
+  "metadata": {
+    "language": "es",
+    "generated_for": "usuario",
+    "notes": "JSON diseñado para integrarse en tutoriales, apps o ejercicios. Si necesitas otro esquema (por ejemplo, con coordenadas iniciales o imágenes), dímelo y lo adapto."
+  }
+}

@@ -24,10 +24,11 @@ header {
 }
 header img {
     display: block;
-    width: 15%;
+    width: 30%;
     height: auto;
 }
 header span {
+    margin-right: 10px;
     white-space: nowrap;
     display: inline-block;
     font-size: 3rem;
@@ -82,11 +83,13 @@ ul.navigation a:hover {
 }
 
 main {
-    max-width: 400px;
     margin: 0 auto;
     padding: 20px;
     background-color: var(--secondary-color);
     color: var(--primary-color);
+}
+p {
+    font-size: 20px;
 }
 .chess {
     font-size: 20px;
@@ -97,6 +100,9 @@ footer {
     padding: 20px;
     background-color: var(--primary-color);
     color: var(--color-text);
+    margin: 10px;
+}
+footer div {
     margin: 10px;
 }
 .social {
@@ -113,7 +119,93 @@ footer {
     border: #ccc solid 1px;
     border-radius: 5px;
     margin: 10px;
+    background-color: #c29d88;
 }
 .social a:hover {
     background-color: #ddd;
+}
+
+* {
+  box-sizing: border-box;
+}
+.players {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+#players div {
+  border: 1px solid #999;
+  padding: 15px;
+  margin: 10px;
+  background-color: #eeb1b1;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  overflow: hidden;
+  display: grid;
+  grid-template-areas:
+    "name"
+    "country"
+    "photograph"
+    "description" ;
+}
+
+#players div h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: rgb(204, 151, 151);
+  margin: 0;
+  border: none;
+  grid-area: name;
+  padding-left: 10px;
+}
+
+#players div img {
+  width: 50%;
+  height: 80%;
+  border-radius: 8px;
+
+  grid-area: photograph;
+}
+
+#players div p {
+  font-size: 1.5rem;
+  color: #474747;
+  margin: 8px 0;
+  padding-left: 10px;
+}
+
+.country {
+  grid-area: country;
+}
+
+.description {
+  grid-area: description;
+}
+
+.player-card i {
+  font-style: 'roboto';
+  margin: 5px;
+}
+
+.h2-card {
+  background-color: rgb(134, 39, 39);
+  color: rgb(204, 151, 151);
+  margin-bottom: 10px;
+}
+
+/* CSS Image Effects */
+
+.myimage {
+  width: 200px;
+  height: 200px;
+}
+
+.myimage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #333;
 }

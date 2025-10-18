@@ -14,7 +14,7 @@ getMembers();
 const displayMembers = (members) => {
     members.forEach((member) => {
         let card = document.createElement('section');
-        let name = document.createElement('h3');
+        let name = document.createElement('h2');
         let information = document.createElement('p');
         let url = document.createElement('a');
         let number = document.createElement('p');

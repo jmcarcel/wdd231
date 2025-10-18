@@ -8,7 +8,7 @@ function displayMembers(places) {
         const card = document.createElement('div');
         card.classList.add('place-card');
         card.innerHTML = `
-            <img class="myimage" src="../chamber/images/${place.image}" alt="${place.name}" width="300" height="200" loading="lazy">
+            <img class="myimage" src="..chamber/images/${place.image}" alt="${place.name}" width="300" height="200" loading="lazy">
             <h2 class="h2-card">${place.name}</h2>
             <p class="address"><i>${place.address}</i></p>
             <p class="description">${place.description}</p>

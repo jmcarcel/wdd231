@@ -11,7 +11,7 @@ export const players = [
         "125-game unbeaten streak in classical chess",
         "World #1 on the FIDE ranking for over a decade"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Magnus_Carlsen_2023.jpg"
+      "image": "Carlsen-Magnus.webp"
     },
     {
       "name": "Hikaru Nakamura",
@@ -25,7 +25,7 @@ export const players = [
         "Consistently among the top blitz and rapid players worldwide",
         "Leading chess streamer and influencer promoting the game globally"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Hikaru_Nakamura_2023.jpg"
+      "image": "Hikaru-nakamura.webp"
     },
     {
       "name": "Fabiano Caruana",
@@ -38,7 +38,7 @@ export const players = [
         "Peak Elo: 2844 (second highest in history)",
         "Member of the U.S. Olympic gold medal team (2016)"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Fabiano_Caruana_2022.jpg"
+      "image": "Fabiano-caruana.webp"
     },
     {
       "name": "Arjun Erigaisi",
@@ -51,7 +51,7 @@ export const players = [
         "Indian national champion and multiple international tournament winner",
         "Top 5 in the world in 2025"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Arjun_Erigaisi_2023.jpg"
+      "image": "Arjun-erigaisi.webp"
     },
     {
       "name": "Rameshbabu Praggnanandhaa",
@@ -64,7 +64,7 @@ export const players = [
         "Key member of the Indian Olympic chess team",
         "Has defeated Magnus Carlsen in rapid and blitz formats"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/57/Praggnanandhaa_2023.jpg"
+      "image": "Rameshbabu-Praggnanandhaa.webp"
     },
     {
       "name": "Alireza Firouzja",
@@ -77,7 +77,7 @@ export const players = [
         "2022 European Individual Champion",
         "Consistent Top 10 player since age 18"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Alireza_Firouzja_2021.jpg"
+      "image": "alireza-firouzja.webp"
     },
     {
       "name": "Anish Giri",
@@ -90,7 +90,7 @@ export const players = [
         "Winner of major tournaments such as Tata Steel 2023",
         "Renowned author and commentator in the chess world"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Anish_Giri_2023.jpg"
+      "image": "Anish-Giri.webp"
     },
     {
       "name": "Wesley So",
@@ -103,7 +103,7 @@ export const players = [
         "Olympic gold medalist with the U.S. team (2016)",
         "Regular member of the world’s Top 10 since 2016"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Wesley_So_2022.jpg"
+      "image": "Wesley-So.webp"
     },
     {
       "name": "Vincent Keymer",
@@ -116,7 +116,7 @@ export const players = [
         "Winner of several top international youth tournaments",
         "Top 10 in the world in 2025"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/Vincent_Keymer_2023.jpg"
+      "image": "Vincent-keymer.webp"
     },
     {
       "name": "Wei Yi",
@@ -129,7 +129,7 @@ export const players = [
         "World Junior Champion",
         "Key player in China’s World Team Championship victories"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/59/Wei_Yi_2023.jpg"
+      "image": "Wei-Yi.webp"
     }
   ]
 
